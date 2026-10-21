@@ -4,19 +4,19 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "GCP region. The course uses southamerica-east1 (Sao Paulo) everywhere."
+  description = "GCP region. The course uses us-central1 (Iowa) everywhere."
   type        = string
-  default     = "southamerica-east1"
+  default     = "us-central1"
 }
 
 variable "zone" {
   description = "GCP zone inside the region."
   type        = string
-  default     = "southamerica-east1-a"
+  default     = "us-central1-a"
 }
 
 variable "servicio_patron_image" {
-  description = "Image the VM runs, e.g. southamerica-east1-docker.pkg.dev/PROJECT_ID/infra-cloud-template/app:v1 (pushed in class 3, or by ci.yml from class 4)."
+  description = "Image the VM runs, e.g. us-central1-docker.pkg.dev/PROJECT_ID/infra-cloud-template/app:v1 (pushed in class 3, or by ci.yml from class 4)."
   type        = string
 }
 

@@ -4,7 +4,7 @@ variable "name" {
 }
 
 variable "zone" {
-  description = "GCP zone, e.g. \"southamerica-east1-a\"."
+  description = "GCP zone, e.g. \"us-central1-a\"."
   type        = string
 }
 
@@ -55,7 +55,7 @@ variable "container_name" {
 }
 
 variable "container_image" {
-  description = "Container image to run, e.g. \"southamerica-east1-docker.pkg.dev/PROJECT_ID/infra-cloud-template/app:v1\". No default: never hardcoded here."
+  description = "Container image to run, e.g. \"us-central1-docker.pkg.dev/PROJECT_ID/infra-cloud-template/app:v1\". No default: never hardcoded here."
   type        = string
 }
 
