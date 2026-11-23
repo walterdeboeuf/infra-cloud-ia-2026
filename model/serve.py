@@ -60,6 +60,9 @@ async def lifespan(_: FastAPI):
     yield
 
 
+MODEL_VERSION = "v1.1"
+
+
 app = FastAPI(title="model-server", version="1.0.0", lifespan=lifespan)
 
 
@@ -107,7 +110,11 @@ def predict(req: PredictRequest) -> dict[str, object]:
     idx = int(proba.argmax())
     PREDICTIONS.inc()
     PREDICT_LATENCY.observe(time.time() - start)
-    return {"class": bundle["target_names"][idx], "confidence": float(proba[idx])}
+    return {
+        "class": bundle["target_names"][idx],
+        "confidence": float(proba[idx]),
+        "model_version": MODEL_VERSION,
+    }
 
 
 if __name__ == "__main__":
