@@ -71,6 +71,7 @@ module "gke" {
   network_id     = module.network.network_id
   subnetwork_id  = module.network.subnetwork_id
   max_node_count = 2
+  machine_type   = "e2-medium"
 }
 
 locals {
